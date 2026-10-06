@@ -1,0 +1,25 @@
+/* Презентації для клієнтів. Кожен запис: slug (папка media/presentations/<slug>/ зі сторінками p01.jpg… і cover.jpg),
+   pdf (файл для відправки), link (посилання на Google Drive для листа, необов'язково), title, lang (UA/EN/PL/RU/DE), format, size, pages, audience, desc, status, note (лише менеджеру).
+   Порядок у списку = порядок на екрані. */
+window.HH_PRESENTATIONS=[
+ {slug:"azs-inzhenernyi-zakhyst-ua-2026",pdf:"media/presentations/azs-inzhenernyi-zakhyst-ua-2026/azs-inzhenernyi-zakhyst-ua-2026.pdf",
+  title:"Інженерний захист об'єктів АЗС",lang:"UA",format:"PDF",size:"3,6 МБ",pages:9,audience:"бізнес · паливні мережі",
+  desc:"Захисний комплекс для АЗС на базі «Фортеці 4.0»: каркас-навіс над укриттям, проїзд бензовоза, магазин і кава всередині захищеного простору, креслення (план 15 330 × 5 730 мм, розрізи), варіанти з кількох модулів для авто і техніки, контакти.",
+  link:"",status:"актуальна",
+  note:""},
+ {slug:"zakhysni-modulni-sporudy-viyskovi-ua-2026",pdf:"media/presentations/zakhysni-modulni-sporudy-viyskovi-ua-2026/zakhysni-modulni-sporudy-viyskovi-ua-2026.pdf",
+  title:"Захисні модульні споруди для потреб військових",lang:"UA",format:"PDF",size:"6 МБ",pages:12,audience:"оборона · військові частини",
+  desc:"Конструкція і характеристики (залізобетон, стіни/стеля 300 мм, потрійний армокаркас, протиосколкова сітка, ширина 2,25/3,5/4/6 м, від наземного до 6 м глибини, 500 кПа, ×5 норми ДСТУ 9329:2025), призначення: казарма, їдальня, навчальний клас, командний пункт, КЗЗ і склад, варіанти компонування, польові випробування (500 кПа, Т-72, 120-мм снаряд, ТМ-62), вогнева споруда, монтаж і стандарти (ДСТУ 9329:2025, ДСТУ 9195:2022, ДБН В.2.2-5:2023, НАТО).",
+  link:"",status:"актуальна",
+  note:""},
+ {slug:"hobbit-house-prezentatsiya-ua-2026-06",pdf:"media/presentations/hobbit-house-prezentatsiya-ua-2026-06/hobbit-house-prezentatsiya-ua-2026-06.pdf",
+  title:"Hobbit House — загальна презентація компанії (червень 2026)",lang:"UA",format:"PDF",size:"6,5 МБ",pages:27,audience:"бізнес · громади · оборона",
+  desc:"Кейс Вовчанська, компанія, лінійки «Хоббіт» і «Фортеця», подвійне призначення, ПМУ 2,25/3,5/4/6 м, ПРУ, Фортеця 4.0 і 6.0, чому Hobbit House (арка, контрфорси, універсальність, кастомізація), Барбет/Бастіон/Цитадель, випробування 500 кПа, Т-72, ПГ-7, БМП, Хоббіт 2.0 (ТМ-62), реальний захист (Херсон, Липці, Вовчанськ), сертифікація SIC (НАТО), контакти.",
+  link:"",status:"актуальна",
+  note:""},
+ {slug:"hobbit-house-presentation-en-2026-06",pdf:"media/presentations/hobbit-house-presentation-en-2026-06/hobbit-house-presentation-en-2026-06.pdf",
+  title:"Hobbit House — Company presentation (June 2026)",lang:"EN",format:"PDF",size:"6,1 МБ",pages:26,audience:"partners · EU · donors",
+  desc:"Англійська версія загальної презентації: Vovchansk case, company, «Hobbit» and «Fortetsia» lines, dual-use concept, primary mobile shelters 2.25/3.5/4/6 m, fallout shelters, Fortetsia 4.0 and 6.0, why Hobbit House, Barbet/Bastion/Citadel, 500 kPa tests, T-72, Hobbit 2.0 (TM-62), real protection (Kherson, Lyptsi, Vovchansk), SIC certification (NATO), contacts.",
+  link:"",status:"актуальна",
+  note:""},
+];

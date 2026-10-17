@@ -1,0 +1,50 @@
+[
+ {
+  "id": "patent",
+  "title": "Патент",
+  "img": "media/docs/patent.jpg",
+  "pdf": "media/docs/patent.pdf"
+ },
+ {
+  "id": "cert-dbn-dstu",
+  "title": "Сертифікат відповідності ДБН та ДСТУ",
+  "img": "media/docs/cert-dbn-dstu.jpg",
+  "pdf": "media/docs/cert-dbn-dstu.pdf"
+ },
+ {
+  "id": "cert-9329-f60",
+  "title": "Сертифікат ДСТУ 9329:2025 — Фортеця 6.0",
+  "img": "media/docs/cert-9329-f60.jpg",
+  "pdf": "media/docs/cert-9329-f60.pdf"
+ },
+ {
+  "id": "cert-9329",
+  "title": "Сертифікат відповідності ДСТУ 9329:2025",
+  "img": "media/docs/cert-9329.jpg",
+  "pdf": "media/docs/cert-9329.pdf"
+ },
+ {
+  "id": "cert-9329-f40",
+  "title": "Сертифікат ДСТУ 9329:2025 — Фортеця 4.0",
+  "img": "media/docs/cert-9329-f40.jpg",
+  "pdf": "media/docs/cert-9329-f40.pdf"
+ },
+ {
+  "id": "cert-9195",
+  "title": "Сертифікат відповідності ДСТУ 9195:2022",
+  "img": "media/docs/cert-9195.jpg",
+  "pdf": "media/docs/cert-9195.pdf"
+ },
+ {
+  "id": "cert-hobbit20",
+  "title": "Сертифікат відповідності «Хоббіт 2.0»",
+  "img": "media/docs/cert-hobbit20.jpg",
+  "pdf": "media/docs/cert-hobbit20.pdf"
+ },
+ {
+  "id": "cert-fortecya",
+  "title": "Сертифікат відповідності «Фортеця»",
+  "img": "media/docs/cert-fortecya.jpg",
+  "pdf": "media/docs/cert-fortecya.pdf"
+ }
+]

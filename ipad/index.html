@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HH Презентер</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="HH Презентер">
+<link rel="apple-touch-icon" href="../media/icon-192.jpg">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#ffffff">
+<style>
+ :root{--ink:#1F2328;--muted:#5F6B73;--line:#D9DDE0;--bg:#F3F4F5;--accent:#2F7D4F;--alarm:#C8372D;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+ *{box-sizing:border-box} html,body{margin:0;height:100%;background:#fff;color:var(--ink);-webkit-text-size-adjust:100%}
+ main{min-height:100%;display:flex;align-items:center;justify-content:center;padding:24px 16px calc(24px + env(safe-area-inset-bottom,0px))}
+ .box{width:min(440px,100%);text-align:center}
+ .logo{width:84px;height:84px;border-radius:20px;display:block;margin:0 auto 18px}
+ h1{font-size:28px;margin:0 0 6px;letter-spacing:-.01em} p{color:var(--muted);font-size:16px;line-height:1.5;margin:0 0 18px}
+ form{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+ input{font:inherit;font-size:18px;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--bg);min-height:52px;text-align:center}
+ input:focus{outline:2px solid var(--ink);background:#fff}
+ button{font:inherit;font-size:17px;font-weight:600;min-height:52px;border:0;border-radius:999px;background:var(--ink);color:#fff;cursor:pointer}
+ button:disabled{opacity:.6}
+ .err{color:var(--alarm);min-height:22px;font-size:15px;margin:0}
+ .how{margin-top:26px;text-align:left;background:var(--bg);border-radius:14px;padding:16px 18px;font-size:15px;line-height:1.55;color:var(--ink)}
+ .how b{display:block;margin-bottom:6px} .how ol{margin:0;padding-left:20px} .how li{margin:3px 0}
+ .hidden{display:none}
+</style>
+</head>
+<body>
+<main><div class="box">
+ <img class="logo" src="../media/icon-192.jpg" alt="">
+ <h1>HH Презентер</h1>
+ <p id="lead">Закрита версія для відділу продажів Hobbit House. Введіть пароль — один раз на цьому пристрої.</p>
+ <form id="f" autocomplete="off">
+  <input id="pw" type="password" placeholder="Пароль" autocomplete="current-password" required>
+  <p class="err" id="err" role="alert"></p>
+  <button id="go" type="submit">Увійти</button>
+ </form>
+ <div class="how" id="how">
+  <b>Як встановити на iPad</b>
+  <ol>
+   <li>Відкрийте цю сторінку в <b style="display:inline">Safari</b>.</li>
+   <li>Натисніть «Поділитися» (квадрат зі стрілкою вгору).</li>
+   <li>Оберіть «На екран Додому» → «Додати».</li>
+   <li>Відкрийте «HH Презентер» з екрана Додому і введіть пароль.</li>
+   <li>Після входу всі відео, фото й матеріали (≈170 МБ) завантажаться самі — тримайте застосунок відкритим кілька хвилин на Wi‑Fi. Далі він працює без інтернету.</li>
+  </ol>
+ </div>
+</div></main>
+<script>
+(function () {
+  "use strict";
+  const $ = s => document.querySelector(s);
+  const standalone = window.navigator.standalone === true || matchMedia("(display-mode: standalone)").matches;
+  if (standalone) $("#how").classList.add("hidden");
+  function idb() { return new Promise((res, rej) => { const r = indexedDB.open("hh-ipad", 1);
+    r.onupgradeneeded = () => r.result.createObjectStore("kv"); r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error); }); }
+  async function kv(op, val) {
+    const db = await idb();
+    return new Promise((res, rej) => { const st = db.transaction("kv", op === "get" ? "readonly" : "readwrite").objectStore("kv");
+      const t = op === "get" ? st.get("k") : st.put(val, "k"); t.onsuccess = () => res(t.result); t.onerror = () => rej(t.error); });
+  }
+  const hex = h => new Uint8Array(h.match(/../g).map(x => parseInt(x, 16)));
+  async function sw() {
+    if (!("serviceWorker" in navigator)) throw new Error("no-sw");
+    const reg = await navigator.serviceWorker.register("sw.js", {scope: "./", updateViaCache: "none"});
+    await navigator.serviceWorker.ready;
+    if (!navigator.serviceWorker.controller) {
+      await new Promise(r => { navigator.serviceWorker.addEventListener("controllerchange", r, {once: true}); setTimeout(r, 4000); });
+    }
+    return reg;
+  }
+  function openApp() { location.replace("app.html"); }
+  // скільки разів поспіль сторінка перезапускалась у пошуках service worker (щоб не крутитись без кінця)
+  function tries(add) { try { const n = +(sessionStorage.getItem("hh_try") || 0) + add; sessionStorage.setItem("hh_try", String(n)); return n; } catch (_) { return 99; } }
+  async function boot() {
+    try {
+      const k = await kv("get");
+      if (k) {
+        await sw();
+        if (navigator.serviceWorker.controller) { tries(-99); return openApp(); }
+        if (tries(1) <= 2) return location.reload();
+        $("#err").textContent = "Safari не завершив підготовку. Закрийте застосунок (змахніть угору) і відкрийте ще раз.";
+      }
+    } catch (e) { if (String(e.message) === "no-sw") $("#err").textContent = "Цей браузер не підтримує роботу без інтернету. Відкрийте в Safari (не в приватному режимі)."; }
+    $("#pw").focus();
+  }
+  $("#f").addEventListener("submit", async ev => {
+    ev.preventDefault();
+    const pw = $("#pw").value; if (!pw) return;
+    $("#go").disabled = true; $("#err").textContent = ""; $("#go").textContent = "Перевіряю…";
+    try {
+      const meta = await (await fetch("e/meta.json", {cache: "no-cache"})).json();
+      const base = await crypto.subtle.importKey("raw", new TextEncoder().encode(pw), "PBKDF2", false, ["deriveBits"]);
+      const bits = await crypto.subtle.deriveBits({name: "PBKDF2", hash: "SHA-256", salt: hex(meta.salt), iterations: meta.iter}, base, 256);
+      const key = await crypto.subtle.importKey("raw", bits, "AES-GCM", false, ["decrypt"]);
+      const chk = hex(meta.check);
+      try { await crypto.subtle.decrypt({name: "AES-GCM", iv: chk.slice(0, 12)}, key, chk.slice(12)); }
+      catch (_) { throw new Error("bad"); }
+      await kv("put", bits);
+      await sw();
+      if (navigator.serviceWorker.controller) navigator.serviceWorker.controller.postMessage("key");
+      openApp();
+    } catch (e) {
+      $("#err").textContent = e.message === "bad" ? "Невірний пароль." : "Немає зв'язку. Для першого входу потрібен інтернет.";
+      $("#go").disabled = false; $("#go").textContent = "Увійти";
+    }
+  });
+  boot();
+})();
+</script>
+</body>
+</html>

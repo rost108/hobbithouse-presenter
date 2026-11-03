@@ -405,6 +405,7 @@ table,.mspec dd,.lbctr,#nav .n,.pill{font-variant-numeric:tabular-nums}
 .capline .chip.on{background:var(--ink);border-color:var(--ink);color:#fff} .capline .chip.on b{color:#D9DDE0}
 @media (max-width:600px){.capline>img{display:none}}
 </style>
+<style>#notes,#notesBtn{display:none!important}#docGrid:empty::after{content:"Сертифікати надаємо на переговорах."}</style>
 </head>
 <body>
 <div id="app">
@@ -445,12 +446,7 @@ table,.mspec dd,.lbctr,#nav .n,.pill{font-variant-numeric:tabular-nums}
   <h2 style="margin-top:8px">Моделі</h2>
   <div class="grid g4" id="modelIndex"></div>
  </div>
- <div class="notes-src" hidden>
-  <li>Три входи в розмову: від кількості людей (Підбір), від типу клієнта (Для кого) або від сумніву (Докази). Не читайте всі цифри обкладинки підряд: один факт плюс значення для клієнта.</li>
-  <li>Завжди «Фортеця від Hobbit House» (у RGM group є своя «Фортеця»). Заборонені слова: бункер, терміново, акція, «гарантуємо» без доказу. «Витримало прямі влучання» — лише про полігон.</li>
-  <li>Схема «Анатомія «Фортеці»» на старті вже завантажена й жива: з технічним клієнтом почніть із «Розрізу» або «Монтажу» прямо тут.</li>
-  <li>Клавіша C ховає нотатки й розділ «Менеджеру», коли екран бачить клієнт.</li>
- </div>
+ 
 </section>
 
 <section class="screen" id="select" data-title="Підбір моделі" data-group="Інструменти">
@@ -459,20 +455,13 @@ table,.mspec dd,.lbctr,#nav .n,.pill{font-variant-numeric:tabular-nums}
   <label>Людей <input id="selPeople" type="number" min="1" value="30"></label>
  </div>
  <div id="selOut" style="margin-top:18px"></div>
- <div class="notes-src" hidden>
-  <li>Це орієнтир для розмови, не проєкт. Остаточну модель і місткість підтверджує інженер після огляду майданчика (під'їзд, основа, комунікації, ґрунтові води для підземного).</li>
-  <li>Норми площі на людину залежать від призначення (ДБН В.2.2-5:2023, ДСТУ 9195:2022). У КП №629 використано 0,6 м²/ос. для ПМУ. Для ПРУ потрібні додаткові приміщення й автономність 48 год.</li>
-  <li>Якщо одна споруда не вміщує — пропонуйте конфігурації 3+2 / 3+3 / 5+5 або кілька споруд; секції нарощуються в довжину й ширину.</li>
- </div>
+ 
 </section>
 
 <section class="screen" id="compare" data-title="Порівняння моделей" data-group="Інструменти">
  <header><span class="eyebrow">Інструмент</span><h2>Усі моделі в одній таблиці</h2><p class="lead">Дані з характеристик на сайті. Місткість — з таблиці розміщення компанії. Клацніть назву, щоб відкрити картку.</p></header>
  <div class="table" id="cmpTable"></div>
- <div class="notes-src" hidden>
-  
-  <li>Для 2,25 2XL сайт дає довжину 11 030 мм, КП №629 — 10 630 мм. Перед відправкою КП звірте з інженером.</li>
- </div>
+ 
 </section>
 
 <!-- картки моделей вставляються сюди -->
@@ -484,16 +473,11 @@ table,.mspec dd,.lbctr,#nav .n,.pill{font-variant-numeric:tabular-nums}
 <section class="screen" id="tests" data-title="Випробування" data-group="Докази">
  <header><span class="eyebrow">Докази</span><h2>Випробування на полігоні</h2></header>
  <div class="grid g2" id="testVideos"></div>
- <div class="notes-src" hidden>
-  <li>У фокус-групах 83% зупиняються саме на цьому доказі. Показуйте відео, не переказуйте.</li>
-  <li>Протокол випробувань існує, але не публікується: «Протокол надаємо замовнику на переговорах». Свідок тесту Т-72 — лише відео, не кажіть «підтверджено незалежними експертами».</li>
-  <li>Розрахунок міцності зроблено на всю конструкцію в зборі (САПР Ліра, КНУБА), не на кубик бетону, як у багатьох виробників. Це окремий аргумент.</li>
-  <li>«Витримало прямі влучання» — лише полігон. У бою прямих влучань не було. Вовчанськ: укриття вистояло й довго служило людям.</li>
- </div>
+ 
 </section>
 
 <section class="screen" id="certs" data-title="Сертифікати і документи" data-group="Докази">
- <header><span class="eyebrow">Докази · 2</span><h2>Документи, які приймають перевірки й тендери</h2><p class="lead">Усі офіційні документи з сайту збережені тут у PDF: патент і сім сертифікатів. Клацніть прев'ю, щоб показати великим; PDF відкривається окремо.</p></header>
+ <header><span class="eyebrow">Докази · 2</span><h2>Документи, які приймають перевірки й тендери</h2><p class="lead">Сертифікати й патент показуємо на переговорах.</p></header>
  <div class="grid g4" id="docGrid"></div>
  <h3 style="margin:24px 0 10px">Експертні висновки й системи якості</h3>
  <div class="grid g3">
@@ -506,52 +490,32 @@ table,.mspec dd,.lbctr,#nav .n,.pill{font-variant-numeric:tabular-nums}
   <div class="card"><h3>ДСТУ 9195:2022</h3><p>Захисні споруди цивільного захисту. Окремий чинний сертифікат. Таблиця Б.1 (300 мм), п. Б.5 (протиосколкова сітка), п. Б.6 (армування в три сітки).</p></div>
   <div class="card"><h3>ДБН В.2.2-5:2023</h3><p>Норми проєктування захисних споруд: товщина 300 мм (табл. 14.13), висота понад 2,5 м (п. 7.1.5), класи захисту, придатність під ПРУ і сховища.</p></div>
  </div>
- <div class="notes-src" hidden>
-  <li>Сертифікат ДСТУ 9329:2025 на лінійку «Фортеця» (2,25 і 3,5) дійсний до 24.11.2026. Для 4.0 і 6.0 окремі сертифікати від червня 2026. Перед тендером перевірте дату.</li>
-  <li>Документи містять адреси. Клієнту на переговорах показуємо повністю; у соцмережі лише кроп.</li>
-  <li>Референт-лист надається за офіційним запитом; частина замовників просить NDA. Не обіцяйте список адрес.</li>
- </div>
+ 
 </section>
 
 <section class="screen" id="anatomy" data-title="Анатомія «Фортеці»" data-group="Докази">
  <header><span class="eyebrow">Докази · 3</span><h2>Розберіть «Фортецю» на деталі разом із клієнтом</h2><p class="lead">Точна CAD-модель «Фортеці 3,5»: шари з поясненнями, розріз із товщинами, монтаж по одному елементу й ударна хвиля з графіком тиску на стіні.</p></header>
  <iframe class="anat" id="anatFrame" src="anatomy.html?embed" loading="lazy" title="Анатомія «Фортеці 3,5»: інтерактивна схема"></iframe>
- <div class="notes-src" hidden>
-  <li>Свайп угору по кресленню — деталі розходяться; дотик до деталі — вона підстрибує і показує назву. Кнопки внизу: шари 01–06, «Розріз», «Монтаж», «Хвиля».</li>
-  <li>«Розріз» показує головне для технічних клієнтів: дах і стіни 300 мм, стінову панель у пазу контрфорса, шпонку в пазу кришки, 3,5 м у просвіті.</li>
-  <li>«Монтаж» — порядок збирання: плита підлоги → контрфорси → панелі в пази → торці й двері → кришки даху від торця до торця. Строки називаємо окремо: складання від 8 годин.</li>
-  <li>Хвиля — умовна схема, щоб пояснити, що таке ударна хвиля і запас до 500 кПа (держстандарт 100 кПа). Це не розрахунок конструкції; так і кажіть, якщо питають.</li>
-  <li>Схема — CAD-модель «Фортеці 3.5 3XL»: габарит 15 330 × 5 230 × 3 110 мм. Перейти сюди з картки моделі — кнопка «Анатомія». Сама схема лише українською.</li>
- </div>
+ 
 </section>
 
 <section class="screen" id="projects" data-title="Проєкти" data-group="Досвід">
  <header><span class="eyebrow">Досвід</span><h2>600+ об'єктів. Ось ті, що опубліковані</h2><p class="lead">Адреси укриттів не розкриваємо: це частина захисту замовників. Нижче кейси, які замовники самі зробили публічними на нашому сайті. Клацніть картку, щоб відкрити фото й опис.</p></header>
  <div class="grid g3" id="projGrid"></div>
- <div class="notes-src" hidden>
-  <li>Найбільша виручка — бізнес і військові. Громади — поки мінімум об'єктів. Школи — завершеного кейсу ще немає (є дитсадки): не обіцяйте «досвід зі школами».</li>
-  
-  <li>Де подивитись укриття наживо: запитайте місто клієнта, частина об'єктів доступна для відвідування за домовленістю.</li>
- </div>
+ 
 </section>
 
 <section class="screen" id="faq" data-title="Питання і відповіді" data-group="Досвід">
  <header><span class="eyebrow">28 запитань із сайту</span><h2>Що питають клієнти</h2><p class="lead">Офіційні відповіді компанії. Фільтр шукає по питанню й відповіді.</p></header>
  <input id="faqq" type="search" placeholder="Наприклад: ціна, ПРУ, монтаж, тендер" style="width:100%;max-width:520px;margin-bottom:12px">
  <div class="faq" id="faqList"></div>
- <div class="notes-src" hidden>
-  <li>На «дорого» є офіційна відповідь у FAQ: норми ДБН/ДСТУ, стіна 30 см, постріл з танка, контрфорси, патент. Доповніть таблицею «за що ціна» з розділу «Менеджеру».</li>
-  <li>У відповідях сайту трапляється «бомбосховище» і «гарантуємо» — це публічний текст компанії. У власних репліках тримайтеся словника бренду.</li>
- </div>
+ 
 </section>
 
 <section class="screen" id="videos" data-title="Відео" data-group="Медіа">
  <header><span class="eyebrow">Канал @hobbithouse</span><h2>Відео: випробування і монтаж споруди</h2><p class="lead">Відео збережені в застосунку й відтворюються без інтернету: спершу випробування, потім монтаж.</p></header>
  <div id="videoGroups"></div>
- <div class="notes-src" hidden>
-  <li>Відео лежать у media/yt (копії з YouTube, 360p). Для великого екрана замініть оригіналами з YouTube Studio під тією самою назвою файлу.</li>
-  <li>У підписах старих відео є «24 години від доставки до акту»: у розмові коригуйте на «монтаж від 8 годин».</li>
- </div>
+ 
 </section>
 
 <section class="screen" id="photos" data-title="Фотобанк споруд" data-group="Медіа">
@@ -560,10 +524,7 @@ table,.mspec dd,.lbctr,#nav .n,.pill{font-variant-numeric:tabular-nums}
  <div class="chips" id="pbObj" style="margin-bottom:6px"></div>
  <div id="pbOut"></div>
  <div class="pbsel" id="pbSel" hidden><b id="pbCount"></b><span class="spacer"></span><button class="btn sm" id="pbClear">Скасувати</button><button class="btn primary sm" id="pbSend">Надіслати</button></div>
- <div class="notes-src" hidden>
-  <li>Показувати наживо можна все. Кадри з позначкою «не для розсилки» вибрати не можна: на них упізнаване місце.</li>
-  <li>Візуалізації підписуємо «візуалізація». Креслення — для інженерної розмови, не як фото об'єкта.</li>
- </div>
+ 
 </section>
 
 <section class="screen" id="company" data-title="Компанія" data-group="Про нас">
@@ -577,10 +538,7 @@ table,.mspec dd,.lbctr,#nav .n,.pill{font-variant-numeric:tabular-nums}
   </div>
   <figure><img src="media/site/17d72f5a71fc.jpeg" alt="Виробництво Hobbit House"><figcaption>Фото зі сторінки «Про нас».</figcaption></figure>
  </div>
- <div class="notes-src" hidden>
-  <li>Історія назви — людяний старт і відповідь на «російський слід».</li>
-  <li>Адреси встановлених укриттів не називаємо: це частина захисту замовників.</li>
- </div>
+ 
 </section>
 
 <section class="screen" id="contacts" data-title="Контакти" data-group="Про нас">
@@ -589,23 +547,14 @@ table,.mspec dd,.lbctr,#nav .n,.pill{font-variant-numeric:tabular-nums}
   <div class="clist" id="clist"></div>
   <div class="qrcard"><div class="qrtabs" id="qrTabs"></div><div class="qr" id="qrBox"></div><div class="cap" id="qrCap"></div><div class="sub" id="qrSub"></div><div class="row" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center"><button class="btn primary sm" id="qrFullBtn">На весь екран</button><button class="btn sm" id="vcfBtn">Зберегти візитку</button></div></div>
  </div>
- <div class="notes-src" hidden>
-  <li>QR «Сайт» веде на hobbithouse.com.ua, «Візитка» додає контакт компанії в телефон клієнта, «YouTube» відкриває канал з випробуваннями.</li>
-  <li>Щоб записати контакт клієнта: іконка людини з плюсом унизу, або «Сканер» — наведіть камеру на QR його візитки.</li>
- </div>
+ 
 </section>
 
 <section class="screen" id="presentations" data-title="Презентації" data-group="Про нас">
  <header><span class="eyebrow">Для показу і відправки</span><h2>Презентації</h2><p class="lead">Усі презентації компанії з назвою, мовою і призначенням. Відкриваються локально; для відправки клієнту краще посилання на Drive, якщо файл важкий.</p></header>
  <div class="tabs" id="presLang"></div>
  <div class="grid g2 docs" id="presGrid"></div>
- <div class="notes-src" hidden>
-  <li>Обирайте мову за клієнтом: закордонним — EN/PL, без згадки ДСТУ в супровідному листі.</li>
-  <li>Великі файли (понад 10 МБ) у LinkedIn не проходять: давайте посилання на Google Drive.</li>
-  <li>«Відкрити показ» відкриває слайди на весь екран: стрілки, пробіл, свайпи, клік по слайду. «Надіслати» готує лист мовою презентації: відкрити в пошті або скопіювати текст; на планшеті — «Поділитися» з файлом.</li>
-  <li>Щоб у листі одразу було посилання на файл, додайте Drive-лінк у поле link у presentations.js.</li>
-  <li>Перед відправкою перевірте стан файлу в списку: позначка «застаріле» означає, що всередині є старі цифри.</li>
- </div>
+ 
 </section>
 
 <section class="screen" id="send" data-title="Що надсилати" data-group="Про нас">
@@ -616,16 +565,13 @@ table,.mspec dd,.lbctr,#nav .n,.pill{font-variant-numeric:tabular-nums}
   <a href="https://hobbithouse.com.ua/shelters" target="_blank" rel="noopener"><div class="ic">WEB</div><div><div class="t">Каталог на сайті</div><div class="d">Усі моделі чотирма мовами, сторінки сегментів, FAQ, новини.</div></div></a>
   <a href="https://www.youtube.com/@hobbithouse/videos" target="_blank" rel="noopener"><div class="ic">YT</div><div><div class="t">YouTube @hobbithouse</div><div class="d">Випробування й монтажі одним посиланням.</div></div></a>
  </div>
- <div class="notes-src" hidden>
-  <li>Міжнародним контактам ДСТУ не згадуємо, пишемо «manufacture and install», без «direct strikes». EN-шаблон у розділі «Менеджеру».</li>
-  <li>Великі файли краще посиланням на Drive, не вкладенням.</li>
- </div>
+ 
 </section>
 
 
 </main>
 
-<div id="notes" hidden><div class="eyebrow" style="margin-bottom:6px">Нотатки менеджера · клієнт цього не бачить</div><ul id="notesList"></ul></div>
+<div id="notes" hidden><div class="eyebrow" style="margin-bottom:6px"></div><ul id="notesList"></ul></div>
 <div id="bar">
  <button class="ibtn" id="menuBtn" aria-label="Меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button><button class="btn" id="prevBtn">←<span class="lbl"> Назад</span></button><button class="btn primary" id="nextBtn"><span class="lbl">Далі </span>→</button><span class="ctr" id="ctr"></span><span class="spacer"></span>
  <button class="ibtn" data-act="crm-new" title="Записати контакт" aria-label="Записати контакт"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-3.9 3.1-7 7-7s7 3.1 7 7"/><path d="M19 8v6M16 11h6"/></svg><span class="badge" id="crmBadge"></span></button><button class="ibtn" data-act="scan" title="Сканувати QR" aria-label="Сканувати QR"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V4a1 1 0 0 1 1-1h3M17 3h3a1 1 0 0 1 1 1v3M21 17v3a1 1 0 0 1-1 1h-3M7 21H4a1 1 0 0 1-1-1v-3"/><path d="M7 12h10"/></svg></button><button class="btn ghost" id="notesBtn">Нотатки</button><button class="btn" id="modeBtn">Показ клієнту</button><button class="btn ghost" id="fsBtn">Весь екран</button>
@@ -749,15 +695,7 @@ function modelScreen(m){
   ${tests.length?`<div class="msec" data-sec="tests"><div class="mtitle"><span class="eyebrow">Випробування</span><h3>${m.underground?"Пряме ураження на полігоні":"Полігон: 500 кПа, міна 120 мм, Т-72"}</h3></div>
    <div class="grid g2">${tests.map(vcard).join("")}</div></div>`:""}
 
-  <div class="notes-src" hidden>
-   <li>Місткість на екрані — лише з таблиці розміщення компанії (лінійки 2,25 / 3,5 / 4,0 / 6,0).</li>
-   ${m.id==="f225-2xl"?"<li>Довжина на сайті 11 030 мм, у КП №629 — 10 630 мм. Перед відправкою КП звірте з інженером.</li>":""}
-   ${m.id==="f35-4xl"?"<li>На сайті для KSE написано «до 140 осіб» на одне укриття 4XL. У таблиці розміщення 3,5 4XL — 78 осіб, у КП №629 — 104.</li>":""}
-   ${m.id==="f40"||m.id==="f60"?"<li>Сертифікат ДСТУ 9329:2025 на цю модель окремий (червень 2026). У флаєрі «3× стандарт» і «24 год» застарілі: кажемо «у 5 разів» і «монтаж від 8 год».</li>":""}
-   ${m.underground?"<li>Для підземного потрібні: низькі ґрунтові води, відсутність підземних комунікацій і дерев, місце для техніки, проєкт до 2 місяців.</li>":""}
-   ${m.pru?"<li>ПРУ дорожче за ПМУ: додаткові приміщення, вентиляція і життєзабезпечення на 48 год, коефіцієнт захисту. Є висновки Енергопроекту (Кз до 1000).</li>":""}
-   <li>Фото з позначкою «не для розсилки» показуємо наживо, але не надсилаємо: упізнаване місце.</li>
-  </div>`;
+  `;
  sec.querySelectorAll("[data-th]").forEach(b=>b.onclick=()=>{const mainB=sec.querySelector(".mgal .main");mainB.dataset.lb=b.dataset.th;mainB.querySelector("img").src=b.dataset.th;sec.querySelectorAll("[data-th]").forEach(x=>x.setAttribute("aria-selected",x===b))});
  sec.querySelectorAll("[data-j]").forEach(a=>a.onclick=e=>{e.preventDefault();const t=sec.querySelector(`[data-sec="${a.dataset.j}"]`);if(t)t.scrollIntoView({behavior:"smooth",block:"start"})});
  bindLb(sec);bindVid(sec);bindGo(sec);bindProj(sec);
@@ -788,13 +726,7 @@ function segScreen(s){
     <div class="grid g2">${props.map(m=>`<button class="mcard ${m.line.startsWith("Фортеця")?"main":""}" data-go="m-${m.id}"><img src="${heroImgs(m)[0]||"media/render-fortecya.jpg"}" alt="" loading="lazy"><b>${esc(m.name)}</b><span class="k">${m.area?m.area+" м²"+(m.capT?" · "+m.cap06+" ос.":""):esc(m.subtitle)}</span></button>`).join("")}</div>
    </div>
   </div>
-  <div class="notes-src" hidden>
-   <li>Перелік пропозицій праворуч — той, що показує сайт для цього сегмента, у тому ж порядку.</li>
-   ${s.key==="business"?"<li>Роботодавця закон не зобов'язує мати укриття: не лякайте штрафами. Аргумент — відповідальність і безперервність роботи. Постанова №1092 про жовтий рівень тривоги — стаття на сайті.</li>":""}
-   ${s.key==="communities"?"<li>Закон №4778-IX зобов'язує школи; нові ДБН — нові ЖК. Школи: завершеного кейсу ще немає, є дитсадки й KSE.</li>":""}
-   ${s.key==="army"?"<li>Для військових лише цифри і факти. Сайт згадує ще «Бастіон» для техніки і вогневі точки: ТТХ уточнюйте у виробництва, карток у каталозі немає.</li>":""}
-   ${s.key==="individuals"?"":""}
-  </div>`;
+  `;
  bindGo(sec);bindVid(sec);return sec;
 }
 

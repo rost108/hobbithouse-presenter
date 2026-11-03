@@ -102,12 +102,12 @@ $("#vpSend").onclick=e=>{e.stopPropagation();if(!vpCur)return;const link=vpCur.i
 
 /* ================= фотобанк ================= */
 const PB={type:"all",obj:"all",sel:new Set(),data:null};
-const KP_PHOTOS=[["media/photo-exterior-trees.jpg","Зовнішній вигляд захисної споруди (КП № 629)"],["media/photo-interior.jpg","Зовнішній вигляд захисної споруди (КП № 629)"],["media/photo-field.jpg","Фото з КП № 629"],["media/render-fortecya.jpg","Візуалізація з КП № 629","","render"],["media/drawing-arch-section.jpg","Креслення з КП № 629","","draw"],["media/photo-entrance-city.jpg","Зовнішній вигляд захисної споруди (КП № 629)","упізнаваний будинок"],["media/photo-art-parking.jpg","Зовнішній вигляд захисної споруди (КП № 629)","упізнане місце"]];
+const KP_PHOTOS=[["media/photo-exterior-trees.jpg", "Зовнішній вигляд захисної споруди"], ["media/photo-interior.jpg", "Зовнішній вигляд захисної споруди"], ["media/photo-field.jpg", "Фото"], ["media/render-fortecya.jpg", "Візуалізація", "", "render"], ["media/drawing-arch-section.jpg", "Креслення", "", "draw"]];
 function pbBuild(){const objs=[];const add=(key,name,items)=>{const seen=new Set();items=items.filter(x=>x.src&&!seen.has(x.src)&&seen.add(x.src));if(items.length)objs.push({key,name,items})};
  D.MODELS.forEach(m=>add("m-"+m.id,m.name,[...m.photos.map(p=>({src:p[0],t:"photo",np:p[1]||"",cap:m.name})),...m.renders.filter(r=>!/\.gif$/i.test(r)).map(r=>({src:r,t:"render",cap:"Візуалізація "+m.name})),...m.drawings.map(r=>({src:r,t:"draw",cap:"Креслення "+m.name}))]));
  (window.HH_PB_EXTRA||[]).forEach(g=>add(g.key,g.name,g.items.map(x=>({src:x[0],t:x[1],cap:x[2],np:x[3]?"1":""}))));
  add("projects","Реалізовані проєкти",D.PROJECTS.flatMap(p=>p.imgs.map(s=>({src:s,t:"photo",cap:p.title}))));
- add("kp","Фото й креслення з КП №629",KP_PHOTOS.map(x=>({src:x[0],cap:x[1],np:x[2]||"",t:x[3]||"photo"})));
+ add("kp","Фото й креслення",KP_PHOTOS.map(x=>({src:x[0],cap:x[1],np:x[2]||"",t:x[3]||"photo"})));
  PB.data=objs}
 const PBT={all:"Усе",photo:"Фото",render:"Візуалізації",draw:"Креслення"};
 function pbRender(){if(!PB.data)pbBuild();const objs=PB.data;const fit=x=>PB.type==="all"||x.t===PB.type;

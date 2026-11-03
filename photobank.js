@@ -33,43 +33,6 @@ window.HH_PB_EXTRA=[
   ]
  },
  {
-  "key": "pb-tests",
-  "name": "З презентації для військових",
-  "private": false,
-  "items": [
-   [
-    "media/photobank/tests-57.jpg",
-    "photo",
-    "Фото з презентації для військових",
-    0
-   ],
-   [
-    "media/photobank/tests-58.jpg",
-    "photo",
-    "Фото з презентації для військових",
-    0
-   ],
-   [
-    "media/photobank/tests-59.jpg",
-    "photo",
-    "Фото з презентації для військових",
-    0
-   ],
-   [
-    "media/photobank/tests-61.jpg",
-    "photo",
-    "Фото з презентації для військових",
-    0
-   ],
-   [
-    "media/photobank/tests-60.jpg",
-    "photo",
-    "Фото з презентації для військових",
-    0
-   ]
-  ]
- },
- {
   "key": "pb-azs",
   "name": "Інженерний захист АЗС — презентація",
   "private": false,

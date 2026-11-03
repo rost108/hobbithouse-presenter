@@ -1,5 +1,5 @@
 /* Service worker Презентера: ядро — спершу мережа (щоб оновлення доходили), медіа — з кешу; відео з кешу віддається частинами (Range) для iOS. */
-const VERSION="7057a6e653";
+const VERSION="7f3ec40591";
 const CORE="hh-core-"+VERSION, MEDIA="hh-media-v1";
 const CORE_FILES=["./","index.html","anatomy.html","anatomy_en.js","features.js","touch.js","i18n.js","i18n_en.js","extra_videos.js","military.js","capacity.js","photobank.js","data.js","presentations.js","presentations_links.js","assets.js","manifest.webmanifest","media/lib/qrcode.js","media/lib/jsQR.js","media/fonts/fonts.css","media/logo-mark.svg","media/icon-192.jpg","media/icon-512.png"];
 self.addEventListener("install",e=>{e.waitUntil(caches.open(CORE).then(c=>Promise.all(CORE_FILES.map(f=>c.add(f).catch(()=>{}))))).then(()=>self.skipWaiting())});

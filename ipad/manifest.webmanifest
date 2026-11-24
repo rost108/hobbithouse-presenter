@@ -1,0 +1,1 @@
+{"name": "Hobbit House · Презентер", "short_name": "HH Презентер", "start_url": "./", "scope": "./", "display": "standalone", "orientation": "any", "background_color": "#ffffff", "theme_color": "#ffffff", "icons": [{"src": "../media/icon-192.jpg", "sizes": "192x192", "type": "image/jpeg"}, {"src": "../media/icon-512.png", "sizes": "512x512", "type": "image/png"}]}
